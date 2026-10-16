@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Igor Rossi Nunes — Gerente de Projetos e Product Owner</title>
+<meta name="description" content="Gerente de Projetos e Product Owner com mais de 10 anos em tecnologia. Implantação de ERP, automação fiscal e financeira (Invoice-to-Pay), requisitos e criação de MVPs.">
+<meta property="og:title" content="Igor Rossi Nunes — Gerente de Projetos e Product Owner">
+<meta property="og:description" content="Do problema ao produto em produção. Projetos, MVPs e implantações.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EEF1F5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEF1F5;
+    --surface: #FFFFFF;
+    --ink: #14213D;
+    --text: #344055;
+    --muted: #5B6679;
+    --line: #CDD4DF;
+    --signal: #F2B705;
+    --done: #2F6F5E;
+    --todo-bg: #FFF4CC;
+
+    --display: "Archivo", "Arial Narrow", sans-serif;
+    --body: "Instrument Sans", system-ui, sans-serif;
+
+    --step--1: 0.875rem;
+    --step-0: 1.0625rem;
+    --step-1: 1.25rem;
+    --step-2: 1.625rem;
+    --step-3: clamp(1.875rem, 1.4rem + 2vw, 2.625rem);
+    --step-4: clamp(2.5rem, 1.6rem + 4.2vw, 4.75rem);
+
+    --gutter: clamp(16px, 4vw, 48px);
+    --max: 1180px;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--text);
+    font: 400 var(--step-0)/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--ink); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a, button { touch-action: manipulation; }
+  :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+  .skip { position: absolute; left: 16px; top: -60px; z-index: 20; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 6px; }
+  .skip:focus { top: 12px; }
+
+  h1, h2, h3 {
+    font-family: var(--display);
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.05;
+    font-variation-settings: "wdth" 112;
+    text-wrap: balance;
+  }
+  h2 { font-size: var(--step-3); font-weight: 750; letter-spacing: -0.01em; }
+  h3 { font-size: var(--step-2); font-weight: 700; line-height: 1.15; }
+  p { margin: 0 0 1em; max-width: 68ch; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .section { padding: clamp(64px, 9vw, 120px) 0; }
+  .section-head { display: grid; gap: 12px; margin-bottom: clamp(32px, 5vw, 56px); max-width: 62ch; }
+  .section-head p { color: var(--muted); margin: 0; }
+
+  /* Content still to be filled in */
+  .todo {
+    background: var(--todo-bg);
+    border-bottom: 2px dashed var(--signal);
+    padding: 0 4px;
+    color: var(--ink);
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(238, 241, 245, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 68px; }
+  .brand {
+    font-family: var(--display); font-weight: 800; font-size: 1.125rem;
+    font-variation-settings: "wdth" 118;
+    text-decoration: none; color: var(--ink);
+  }
+  .nav { display: flex; align-items: center; gap: clamp(14px, 2.2vw, 28px); }
+  .nav a { text-decoration: none; font-weight: 500; font-size: 0.9375rem; white-space: nowrap; }
+  .brand { white-space: nowrap; }
+  @media (max-width: 960px) { .nav a { font-size: 0.875rem; } .nav .btn { padding: 0 14px; } }
+  .nav a:not(.btn):hover { text-decoration: underline; }
+  .nav-toggle { display: none; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 20px;
+    border-radius: 6px; border: 2px solid var(--ink);
+    font: 600 0.9375rem/1 var(--body);
+    text-decoration: none; cursor: pointer;
+    transition: background-color .15s, color .15s;
+  }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: #22325A; }
+  .btn-ghost { background: transparent; color: var(--ink); }
+  .btn-ghost:hover { background: var(--surface); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(48px, 8vw, 104px) 0 clamp(56px, 8vw, 96px); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .hero-id { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+  .avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line); flex: none; }
+  .hero-role { font-weight: 600; color: var(--done); margin: 0; line-height: 1.35; }
+  .hero-areas { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero-areas li {
+    font-size: 0.8125rem; font-weight: 600; color: #fff;
+    padding: 3px 10px; border-radius: 999px;
+    background: var(--ink); border: 1px solid var(--ink);
+  }
+  .hero h1 {
+    font-size: var(--step-4);
+    font-weight: 800;
+    font-variation-settings: "wdth" 100;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+    margin-bottom: 28px;
+  }
+  .hero-lead { font-size: var(--step-1); color: var(--text); max-width: 46ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero-facts { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 28px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: var(--step--1); }
+  .hero-facts li { display: flex; align-items: center; gap: 8px; }
+  .hero-facts svg { flex: none; color: var(--done); }
+
+  /* Roadmap: the signature element. Axis runs from Jan 2016 (0%) to Oct 2026 (100%). */
+  .roadmap {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 24px 20px;
+    box-shadow: 0 1px 0 var(--line), 0 24px 48px -32px rgba(20, 33, 61, 0.35);
+  }
+  .roadmap-top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 18px; }
+  .roadmap-title { font-family: var(--display); font-weight: 700; color: var(--ink); font-variation-settings: "wdth" 112; }
+  .roadmap-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.8125rem; color: var(--muted); }
+  .roadmap-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .swatch.po { background: var(--ink); }
+  .swatch.gp { background: var(--done); }
+  .swatch.sup { background: #8A94A6; }
+
+  .lanes { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .lane, .roadmap-axis { display: grid; grid-template-columns: 9.5rem 1fr; gap: 14px; align-items: center; }
+  .lane-name { font-size: 0.875rem; font-weight: 600; color: var(--ink); line-height: 1.25; }
+  .lane-name small { display: block; font-weight: 400; color: var(--muted); }
+  .track {
+    position: relative; height: 30px;
+    background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 18.5185%);
+    border-radius: 4px;
+  }
+  .bar {
+    position: absolute; top: 4px; bottom: 4px;
+    left: var(--start); width: var(--len);
+    border-radius: 4px;
+    background: var(--ink);
+    transform-origin: left center;
+    animation: grow .9s cubic-bezier(.2,.7,.2,1) both;
+    animation-delay: calc(var(--i) * 120ms + 200ms);
+  }
+  .bar.gp { background: var(--done); }
+  .bar.faded { background: #8A94A6; }
+  .bar .milestone {
+    position: absolute; right: -6px; top: 50%;
+    width: 12px; height: 12px; margin-top: -6px;
+    background: var(--signal); border: 2px solid var(--surface);
+    transform: rotate(45deg);
+  }
+  .roadmap-axis { margin-top: 8px; font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .axis { position: relative; height: 1.2em; }
+  .axis span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+  .axis span:first-child { transform: none; }
+  .axis span:last-child { transform: translateX(-100%); }
+  .roadmap-note { margin: 16px 0 0; font-size: 0.8125rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .roadmap-note .milestone-key { width: 10px; height: 10px; background: var(--signal); transform: rotate(45deg); flex: none; }
+
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  /* ---------- Leadership ---------- */
+  .lead { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .lead-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 32px); }
+  .lead-item { padding: 24px; border-radius: 10px; background: var(--paper); border-top: 4px solid var(--ink); }
+  .lead-item h3 { font-size: var(--step-2); }
+  .lead-when { margin: 0 0 10px; font-size: 0.875rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .lead-org { margin: 6px 0 14px; font-weight: 600; color: var(--done); }
+  .lead-item p:last-child { margin: 0; font-size: 0.9375rem; }
+
+  /* ---------- Cases ---------- */
+  .cases { border-bottom: 1px solid var(--line); }
+  .case-card {
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px);
+    align-items: center; padding: clamp(24px, 4vw, 44px);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  }
+  .case-card h3 { font-size: var(--step-3); margin-bottom: 14px; }
+  .case-card-summary { font-size: var(--step-1); }
+  .case-card-list { margin: 0 0 28px; padding-left: 1.1em; font-size: 0.9375rem; }
+  .case-card-list li + li { margin-top: 6px; }
+  .case-funnel { margin: 0; padding: 20px; background: var(--paper); border-radius: 10px; }
+  .case-funnel figcaption { font-size: 0.8125rem; color: var(--muted); margin-bottom: 12px; }
+  .case-funnel ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .case-funnel li {
+    position: relative; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 8px 12px; font-size: 0.875rem; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .case-funnel li::before {
+    content: ""; position: absolute; inset: 0; width: var(--w); z-index: 0;
+    background: #C9D3E3; border-radius: 4px;
+  }
+  .case-funnel li.drop::before { background: var(--signal); }
+  .case-funnel li > * { position: relative; z-index: 1; }
+  .case-funnel b { font-weight: 700; }
+  .case-funnel-note { margin: 14px 0 0; font-size: 0.8125rem; color: var(--text); display: flex; align-items: center; gap: 8px; }
+  .case-funnel-note i { width: 10px; height: 10px; border-radius: 2px; background: var(--signal); flex: none; }
+
+  /* ---------- Roles ---------- */
+  .roles { border-top: 1px solid var(--line); }
+  .role-table { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+  .role { padding: 24px 24px 8px 0; }
+  .role + .role { padding-left: 24px; border-left: 1px solid var(--line); }
+  .role h3 { font-size: var(--step-1); margin-bottom: 10px; }
+  .role p { font-size: 0.9375rem; color: var(--text); }
+
+  /* ---------- Projects ---------- */
+  .projects { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .project {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(28px, 5vw, 72px);
+    align-items: start;
+    padding: clamp(40px, 6vw, 72px) 0;
+    border-top: 1px solid var(--line);
+  }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project.flip .project-media { order: -1; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; padding: 0; list-style: none; }
+  .tag {
+    font-size: 0.8125rem; font-weight: 600;
+    padding: 4px 10px; border-radius: 999px;
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .tag.role-tag { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .tag.role-tag.gp { background: var(--done); border-color: var(--done); }
+  .project h3 { font-size: var(--step-3); margin-bottom: 8px; }
+  .project-meta { color: var(--muted); font-size: 0.9375rem; margin-bottom: 14px; }
+  .project-summary { font-size: var(--step-1); color: var(--text); margin-bottom: 24px; }
+  .project-link { display: inline-block; margin-top: 20px; font-weight: 600; }
+  .case { margin: 0; display: grid; gap: 18px; }
+  .case div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 16px; border-top: 1px solid var(--line); padding-top: 14px; }
+  .case dt { font-weight: 600; color: var(--ink); font-size: 0.9375rem; }
+  .case dd { margin: 0; font-size: 0.9375rem; }
+  .case ul { margin: 0; padding-left: 1.1em; }
+  .case li + li { margin-top: 4px; }
+
+  /* Screenshot frames. A missing image removes itself and the placeholder shows. */
+  .frame {
+    margin: 0;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .frame-bar { display: flex; align-items: center; gap: 6px; padding: 10px 12px; background: #E2E7EE; border-bottom: 1px solid var(--line); }
+  .frame-bar i { width: 10px; height: 10px; border-radius: 50%; background: #C3CBD8; }
+  .frame-bar span { margin-left: 10px; font-size: 0.75rem; color: var(--muted); }
+  .shot {
+    aspect-ratio: 16 / 10;
+    display: grid; place-items: center; text-align: center;
+    padding: 24px;
+    color: var(--muted); font-size: 0.875rem;
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
+      var(--paper);
+  }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .shot:has(img) { padding: 0; background: var(--surface); }
+  .shot:has(img) .shot-placeholder { display: none; }
+  .shot-placeholder { background: var(--surface); padding: 12px 16px; border-radius: 6px; border: 1px dashed var(--muted); max-width: 30ch; }
+  .frame figcaption { padding: 10px 14px; font-size: 0.8125rem; color: var(--muted); background: var(--surface); border-top: 1px solid var(--line); }
+
+  .phones { display: flex; gap: 20px; justify-content: center; align-items: flex-start; }
+  .phone {
+    width: min(46%, 240px);
+    border: 8px solid var(--ink); border-radius: 30px;
+    background: var(--ink); overflow: hidden;
+  }
+  .phone .shot { aspect-ratio: 9 / 17; border-radius: 22px; padding: 12px; }
+  .phone .shot:has(img) { padding: 8px 0 14px; aspect-ratio: auto; display: block; background: var(--surface); }
+  .phone .shot img { height: auto; object-fit: contain; }
+  .phone:nth-child(2) { margin-top: 48px; }
+  .media-caption { text-align: center; font-size: 0.8125rem; color: var(--muted); margin-top: 16px; }
+
+  .thumbs { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .thumbs button {
+    display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; width: 100%; min-width: 0; padding: 6px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 8px;
+    font: 500 0.8125rem/1.2 var(--body); color: var(--ink); cursor: zoom-in;
+    transition: border-color .15s;
+  }
+  .thumbs button:hover { border-color: var(--ink); }
+  .thumbs img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: contain; border-radius: 4px; background: var(--surface); }
+  .thumbs-wide img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; background: #0B0B0B; }
+
+  /* Desktop screenshot with the phone version overlapping its corner */
+  .device-combo { position: relative; padding: 0 clamp(36px, 7vw, 64px) clamp(40px, 6vw, 56px) 0; }
+  .device-combo .frame { background: #0B0B0B; }
+  .frame-zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+  .frame-zoom img { width: 100%; height: auto; }
+  .phone-mini {
+    position: absolute; right: 0; bottom: 0;
+    width: clamp(92px, 26%, 150px);
+    border-width: 5px; border-radius: 20px;
+    box-shadow: 0 18px 36px -18px rgba(20, 33, 61, 0.6);
+  }
+  .phone-mini .shot, .phone-mini .shot:has(img) { border-radius: 15px; padding: 0; background: #0B0B0B; }
+
+  .viewer { border: 0; padding: 0; background: transparent; max-width: min(94vw, 1200px); max-height: 92vh; overflow: visible; }
+  .viewer::backdrop { background: rgba(20, 33, 61, 0.82); }
+  .viewer img { max-height: 84vh; max-width: min(94vw, 1200px); width: auto; height: auto; margin: 0 auto; border-radius: 10px; background: var(--surface); }
+  .viewer-close {
+    position: absolute; top: -52px; right: 0;
+    min-height: 44px; padding: 0 16px; border-radius: 6px; border: 0;
+    background: var(--surface); color: var(--ink); font: 600 0.9375rem/1 var(--body); cursor: pointer;
+  }
+
+  /* Step list used where a screenshot would show client data */
+  .flow { list-style: none; margin: 0; padding: 20px; display: grid; gap: 10px; background: var(--surface); }
+  .flow li { display: grid; grid-template-columns: 2rem 1fr; gap: 12px; align-items: start; font-size: 0.9375rem; }
+  .flow b { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--paper); border: 1px solid var(--line); color: var(--ink); font-size: 0.8125rem; }
+  .flow strong { color: var(--ink); display: block; }
+
+  /* ---------- Experience ---------- */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 11.5rem; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+  .job { display: grid; grid-template-columns: 10rem 1fr; gap: 3rem; padding-bottom: 48px; position: relative; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: calc(11.5rem - 6px); top: 8px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--paper); border: 3px solid var(--ink);
+  }
+  .job.current::before { background: var(--signal); }
+  .job-when { font-size: 0.9375rem; color: var(--muted); padding-top: 2px; text-align: right; font-variant-numeric: tabular-nums; }
+  .job h3 { font-size: var(--step-2); }
+  .job-org { font-weight: 600; color: var(--done); margin: 6px 0 14px; }
+  .job ul { margin: 0; padding-left: 1.1em; max-width: 68ch; }
+  .job li + li { margin-top: 6px; }
+  .ladder { list-style: none; padding: 0; margin: 20px 0 0; border-left: 2px solid var(--line); }
+  .ladder li { padding: 6px 0 6px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; max-width: 60ch; }
+  .ladder li span:last-child { color: var(--muted); font-size: 0.875rem; font-variant-numeric: tabular-nums; }
+  .ladder li:first-child { font-weight: 600; color: var(--ink); }
+
+  /* ---------- Process ---------- */
+  .process { background: var(--ink); color: #D5DBE6; }
+  .process h2, .process h3 { color: #fff; }
+  .process .section-head p { color: #AEB8C9; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; counter-reset: step; }
+  .step { padding: 20px 20px 0 0; border-top: 2px solid rgba(255,255,255,.25); position: relative; counter-increment: step; }
+  .step::before {
+    content: counter(step);
+    position: absolute; top: -15px; left: 0;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--signal); color: var(--ink);
+    font: 700 0.875rem/1 var(--body);
+  }
+  .step h3 { font-size: var(--step-1); margin: 18px 0 8px; }
+  .step p { font-size: 0.9375rem; }
+
+  /* ---------- Skills ---------- */
+  .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 48px); }
+  .skills-grid h3 { font-size: var(--step-1); padding-bottom: 10px; border-bottom: 2px solid var(--ink); margin-bottom: 14px; }
+  .skills-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+
+  /* ---------- Education ---------- */
+  .edu { background: var(--surface); border-top: 1px solid var(--line); }
+  .edu-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); }
+  .edu-grid h3 { font-size: var(--step-1); padding-bottom: 10px; border-bottom: 2px solid var(--ink); margin-bottom: 4px; }
+  .entries { list-style: none; margin: 0; padding: 0; }
+  .entries li { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .entries strong { color: var(--ink); font-weight: 600; }
+  .entries .org { grid-column: 1; color: var(--muted); font-size: 0.9375rem; }
+  .entries .when { grid-column: 2; grid-row: 1; color: var(--muted); font-size: 0.875rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  /* ---------- Contact ---------- */
+  .contact { border-top: 1px solid var(--line); }
+  .contact-box { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: end; }
+  .contact h2 { font-size: var(--step-4); font-weight: 800; font-variation-settings: "wdth" 100; letter-spacing: -0.02em; line-height: 1; }
+  .contact-lead { margin-top: 20px; font-size: var(--step-1); }
+  .contact-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .contact-links a {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    min-height: 56px; padding: 0 18px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    text-decoration: none; font-weight: 600;
+  }
+  .contact-links a:hover { border-color: var(--ink); }
+  .contact-links small { font-weight: 400; color: var(--muted); }
+
+  .site-footer { padding: 32px 0 48px; font-size: 0.875rem; color: var(--muted); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .hero-grid, .project, .contact-box, .edu-grid, .lead-grid, .case-card { grid-template-columns: 1fr; }
+    .project.flip .project-media { order: 0; }
+    .role-table { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .role:nth-child(3) { padding-left: 0; border-left: 0; }
+    .role:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .steps { grid-template-columns: 1fr; gap: 36px; }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .nav-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 6px;
+      background: var(--surface); color: var(--ink); cursor: pointer;
+    }
+    .nav {
+      position: absolute; top: 68px; left: 0; right: 0;
+      flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--paper); border-bottom: 1px solid var(--line);
+      padding: 8px var(--gutter) 16px;
+      display: none;
+    }
+    .nav.open { display: flex; }
+    .nav a { padding: 12px 0; }
+    .nav .btn { margin-top: 8px; }
+    .role-table { grid-template-columns: 1fr; }
+    .role, .role + .role { padding-left: 0; border-left: 0; }
+    .role + .role { border-top: 1px solid var(--line); }
+    .lane, .roadmap-axis { grid-template-columns: 6.5rem 1fr; }
+    .case div { grid-template-columns: 1fr; gap: 4px; }
+    .timeline::before { left: 6px; }
+    .job { grid-template-columns: 1fr; gap: 4px; padding-left: 32px; }
+    .job::before { left: 0; }
+    .job-when { text-align: left; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .bar { animation: none; }
+  }
+  @media print {
+    .site-header, .hero-actions, .nav-toggle { display: none; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#inicio">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#inicio" translate="no">Igor Rossi Nunes</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav" id="menu" aria-label="Principal">
+      <a href="#lideranca">Liderança</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#cases">Cases</a>
+      <a href="#formacao">Formação</a>
+      <a class="btn btn-primary" href="#contato">Falar comigo</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="hero-id">
+          <img class="avatar" src="img/igor.jpg" alt="Foto de Igor Rossi Nunes" width="56" height="56">
+          <div>
+            <p class="hero-role">Áreas de atuação</p>
+            <ul class="hero-areas">
+              <li>Gerente de Projetos</li>
+              <li>Product Owner</li>
+              <li>Product Manager</li>
+              <li>Implantação</li>
+              <li>Requisitos</li>
+              <li>ERP</li>
+              <li>Integrações</li>
+            </ul>
+          </div>
+        </div>
+        <h1>Do problema da operação ao produto rodando em produção.</h1>
+        <p class="hero-lead">
+          São mais de 10 anos de experiência em tecnologia, com uma trajetória que começou no suporte,
+          evoluiu para implantação de ERPs e liderança de equipes, passou pela criação e evolução de
+          produtos digitais como PO e hoje envolve a gestão de projetos de automação fiscal e financeira,
+          do levantamento de requisitos ao go-live.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/igor-rossi-nunes/" target="_blank" rel="noopener">Ver LinkedIn</a>
+        </div>
+        <ul class="hero-facts">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10+ anos em tecnologia</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Liderança de equipes e projetos</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Atuação híbrida ou remota</li>
+        </ul>
+      </div>
+
+      <!-- Career roadmap. Axis: Jan 2016 = 0%, Oct 2026 = 100% (each year ≈ 9.26%). -->
+      <div class="roadmap" role="img" aria-label="Linha do tempo: suporte na ACSN de 2016 a 2020; implantação de ERP e supervisão na ACSN de 2020 a 2024; Product Owner na Nunes Construções e Esquadrias de 2023 a 2025; gerente de projetos na ROIT desde novembro de 2024.">
+        <div class="roadmap-top">
+          <span class="roadmap-title">Roadmap de carreira</span>
+          <span class="roadmap-legend" aria-hidden="true">
+            <span><i class="swatch po"></i>Produto</span>
+            <span><i class="swatch gp"></i>Projetos e implantação</span>
+            <span><i class="swatch sup"></i>Suporte</span>
+          </span>
+        </div>
+        <ul class="lanes" aria-hidden="true">
+          <li class="lane"><span class="lane-name">Suporte<small>ACSN</small></span><span class="track"><span class="bar faded" style="--start:0%;--len:44.7%;--i:0"><i class="milestone"></i></span></span></li>
+          <li class="lane"><span class="lane-name">Implantação ERP<small>ACSN, varejo</small></span><span class="track"><span class="bar gp" style="--start:44.7%;--len:37.1%;--i:1"><i class="milestone"></i></span></span></li>
+          <li class="lane"><span class="lane-name">Product Owner<small>Obras e Esquadrias</small></span><span class="track"><span class="bar" style="--start:72.5%;--len:13.2%;--i:2"><i class="milestone"></i></span></span></li>
+          <li class="lane"><span class="lane-name">Gerente de Projetos<small>ROIT</small></span><span class="track"><span class="bar gp" style="--start:81.8%;--len:18.2%;--i:3"></span></span></li>
+        </ul>
+        <div class="roadmap-axis" aria-hidden="true">
+          <span></span>
+          <div class="axis"><span style="left:0">2016</span><span style="left:37%">2020</span><span style="left:74.1%">2024</span><span style="left:100%">hoje</span></div>
+        </div>
+        <p class="roadmap-note"><i class="milestone-key" aria-hidden="true"></i>Ciclo concluído</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LEADERSHIP ===================== -->
+  <section class="section lead" id="lideranca" aria-labelledby="lead-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="lead-title">Liderança de pessoas</h2>
+        <p>Nos três últimos cargos, além de entregar, fui responsável por puxar o time junto.</p>
+      </div>
+      <div class="lead-grid">
+        <article class="lead-item">
+          <p class="lead-when">2024 até hoje</p>
+          <h3>Gerente de Projetos</h3>
+          <p class="lead-org">ROIT</p>
+          <p>Coordeno clientes, Produto e Desenvolvimento em vários projetos ao mesmo tempo. Facilito as decisões, alinho expectativas e mantenho todo mundo andando na mesma direção até o go-live.</p>
+        </article>
+        <article class="lead-item">
+          <p class="lead-when">2023 a 2025</p>
+          <h3>Product Owner</h3>
+          <p class="lead-org">Nunes Construções e Esquadrias</p>
+          <p>Liderei um time enxuto de 2 desenvolvedores: visão do produto, prioridades claras a cada entrega e trabalho lado a lado para destravar o que impedia o time de avançar.</p>
+        </article>
+        <article class="lead-item">
+          <p class="lead-when">2024</p>
+          <h3>Supervisor de Suporte</h3>
+          <p class="lead-org">ACSN</p>
+          <p>Liderei a equipe de suporte técnico: capacitei analistas e revendas, fiz a gestão de SLA e acompanhei a performance mensal do time para melhorar o atendimento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section" id="experiencia" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="exp-title">Experiência</h2>
+      </div>
+      <ol class="timeline">
+        <li class="job current">
+          <div class="job-when">nov. 2024 – hoje</div>
+          <div>
+            <h3>Gerente de Projetos</h3>
+            <p class="job-org">ROIT, tempo integral, remoto</p>
+            <ul>
+              <li>Implantação da plataforma de automação fiscal e financeira integrada a ERPs de grande porte, do levantamento de requisitos ao go-live e pós-implantação</li>
+              <li>Gestão simultânea de projetos e clientes: cronogramas, riscos, dependências e expectativas</li>
+              <li>Requisitos transformados em especificações para Produto e Desenvolvimento</li>
+              <li>Uso prático de IA (ChatGPT, Claude, Claude Code e Gemini) em requisitos, documentação, automações e análise de dados</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">nov. 2023 – abr. 2025</div>
+          <div>
+            <h3>Product Owner</h3>
+            <p class="job-org">Nunes Construções e Esquadrias</p>
+            <ul>
+              <li>Criação de produtos digitais para gestão de obras e de esquadrias, substituindo processos totalmente manuais por fluxos automatizados e mais profissionais</li>
+              <li>PO de um time enxuto (2 desenvolvedores + PO) responsável por visão, priorização e entregas incrementais</li>
+              <li>Gestão de obras residenciais e de esquadrias de alumínio, gerando produtos voltados para a construção civil</li>
+            </ul>
+          </div>
+        </li>
+        <li class="job">
+          <div class="job-when">jan. 2016 – nov. 2024</div>
+          <div>
+            <h3>Do suporte à liderança</h3>
+            <p class="job-org">ACSN Desenvolvimento de Software, Salto, SP</p>
+            <ul>
+              <li>Liderei a equipe de suporte com gestão de SLA, capacitação de analistas e revendas e relatórios mensais de performance</li>
+              <li>Implantei ERP e e-commerce em uma ampla carteira de clientes, virando o principal ponto de contato técnico</li>
+            </ul>
+            <ol class="ladder" aria-label="Cargos na ACSN">
+              <li><span>Supervisor de Suporte</span><span>mai. 2024 – nov. 2024</span></li>
+              <li><span>Analista de Implantação Master</span><span>ago. 2021 – mai. 2024</span></li>
+              <li><span>Analista de Implantação Sênior</span><span>nov. 2020 – ago. 2021</span></li>
+              <li><span>Analista de Suporte Pleno</span><span>jan. 2019 – dez. 2020</span></li>
+              <li><span>Analista de Suporte Júnior</span><span>jan. 2016 – jan. 2019</span></li>
+            </ol>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section projects" id="projetos" aria-labelledby="projects-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projects-title">Projetos</h2>
+        <p>Problemas reais, o que eu fiz para resolver e como ficou o produto.</p>
+      </div>
+
+      <!-- PROJECT: Obra Fácil -->
+      <article class="project" id="obra-facil">
+        <div>
+          <ul class="project-tags">
+            <li class="tag role-tag">Product Owner hands-on</li>
+            <li class="tag">App mobile</li>
+            <li class="tag">MVP em produção</li>
+          </ul>
+          <h3>ObraFácil Orçamentos</h3>
+          <p class="project-meta">Aplicativo web instalável no celular</p>
+          <p class="project-summary">App para o profissional de obra montar um orçamento em minutos e mandar para o cliente em PDF ou pelo WhatsApp.</p>
+          <dl class="case">
+            <div><dt>Problema</dt><dd>Orçamentos de mão de obra feitos à mão ou em planilha: demorados, com erro de conta e com cara pouco profissional para o cliente.</dd></div>
+            <div><dt>O que eu fiz</dt><dd>
+              <ul>
+                <li>Defini o MVP: catálogo de serviços, cadastro de clientes e orçamento com mão de obra, material, outros custos e desconto</li>
+                <li>Desenhei a criação do orçamento em 3 passos (cliente, serviços e revisão), com itens adicionados do catálogo em um toque</li>
+                <li>Priorizei o envio em PDF, WhatsApp e e-mail e o controle de status (rascunho, enviado, aprovado, concluído)</li>
+                <li>Incluí o lembrete "Retomar contato" para orçamentos enviados perto de vencer</li>
+                <li>Acompanhei as versões até a publicação, com backup e instalação na tela do celular</li>
+              </ul>
+            </dd></div>
+            <div><dt>Resultado</dt><dd>Produto publicado e em uso.</dd></div>
+          </dl>        </div>
+        <div class="project-media">
+          <div class="phones">
+            <div class="phone"><div class="shot">
+              <img src="img/orcamento/02-inicio.jpg" alt="Tela inicial do ObraFácil com atalho para novo orçamento e resumo dos orçamentos" width="375" height="812" loading="lazy">
+            </div></div>
+            <div class="phone"><div class="shot">
+              <img src="img/orcamento/08-orcamento-totais-acoes.jpg" alt="Totais do orçamento com opções de enviar o PDF pelo WhatsApp, gerar PDF e enviar por e-mail" width="375" height="812" loading="lazy">
+            </div></div>
+          </div>
+          <p class="media-caption">Do primeiro acesso ao orçamento pronto para enviar, com dados de exemplo</p>
+          <ul class="thumbs" aria-label="Mais telas do ObraFácil">
+            <li><button type="button" data-full="img/orcamento/04-orcamentos.jpg" data-alt="Lista de orçamentos com filtros por status e lembrete para retomar contato"><img src="img/orcamento/04-orcamentos.jpg" alt="" width="375" height="812" loading="lazy"><span>Orçamentos</span></button></li>
+            <li><button type="button" data-full="img/orcamento/10-wizard-cliente.jpg" data-alt="Passo 1 de 3 do novo orçamento: cliente e obra"><img src="img/orcamento/10-wizard-cliente.jpg" alt="" width="375" height="812" loading="lazy"><span>Passo 1: cliente</span></button></li>
+            <li><button type="button" data-full="img/orcamento/11-wizard-servicos.jpg" data-alt="Passo 2 de 3: serviços adicionados do catálogo com um toque"><img src="img/orcamento/11-wizard-servicos.jpg" alt="" width="375" height="812" loading="lazy"><span>Passo 2: serviços</span></button></li>
+            <li><button type="button" data-full="img/orcamento/07-orcamento-detalhe.jpg" data-alt="Orçamento pronto com dados do profissional, cliente e serviços"><img src="img/orcamento/07-orcamento-detalhe.jpg" alt="" width="375" height="812" loading="lazy"><span>Orçamento</span></button></li>
+            <li><button type="button" data-full="img/orcamento/09-compartilhar-whatsapp.jpg" data-alt="Mensagem do orçamento pronta para compartilhar pelo WhatsApp"><img src="img/orcamento/09-compartilhar-whatsapp.jpg" alt="" width="375" height="812" loading="lazy"><span>WhatsApp</span></button></li>
+            <li><button type="button" data-full="img/orcamento/06-servicos.jpg" data-alt="Catálogo de serviços com preço por unidade"><img src="img/orcamento/06-servicos.jpg" alt="" width="375" height="812" loading="lazy"><span>Catálogo</span></button></li>
+            <li><button type="button" data-full="img/orcamento/05-clientes.jpg" data-alt="Cadastro de clientes com atalho para novo orçamento"><img src="img/orcamento/05-clientes.jpg" alt="" width="375" height="812" loading="lazy"><span>Clientes</span></button></li>
+            <li><button type="button" data-full="img/OBRAFACIL6.png" data-alt="Orçamento exportado em PDF"><img src="img/OBRAFACIL6.png" alt="" width="495" height="384" loading="lazy"><span>PDF</span></button></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- PROJECT: Gestão de Obras -->
+      <article class="project flip" id="gestao-de-obras">
+        <div>
+          <ul class="project-tags">
+            <li class="tag role-tag">Product Owner hands-on</li>
+            <li class="tag">MVP</li>
+            <li class="tag">Construção civil</li>
+          </ul>
+          <h3>GestãoObra</h3>
+          <p class="project-meta">Nunes Construções e Esquadrias, nov. 2023 a abr. 2025</p>
+          <p class="project-summary">App para controlar tudo o que entra e sai de uma obra: gastos, profissionais, fornecedores, reembolsos e projetos, em um só lugar.</p>
+          <dl class="case">
+            <div><dt>Problema</dt><dd>Custos e documentos da obra espalhados em planilhas, notas e conversas: ninguém sabia quanto já tinha sido investido nem em quê.</dd></div>
+            <div><dt>O que eu fiz</dt><dd>
+              <ul>
+                <li>Discovery com as áreas comercial, produção e instalação</li>
+                <li>Defini a visão e o MVP: dashboard de custos, lançamentos e reembolsos</li>
+                <li>Priorizei a evolução: profissionais e fornecedores, relatórios com exportação em PDF e Excel, controle do orçamento consumido, plantas e galeria da obra</li>
+                <li>Backlog com histórias de usuário e critérios de aceite</li>
+                <li>Hands-on com o time, usando Claude Code e Antigravity para acelerar entregas</li>
+              </ul>
+            </dd></div>
+            <div><dt>Time</dt><dd>2 desenvolvedores e eu como PO</dd></div>
+            <div><dt>Resultado</dt><dd>100% dos projetos de construção e esquadrias controlados no produto, com visão do investimento por categoria e mês a mês.</dd></div>
+          </dl>
+        </div>
+        <div class="project-media">
+          <div class="device-combo">
+            <figure class="frame">
+              <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>gestaoobra</span></div>
+              <button type="button" class="frame-zoom" data-full="img/gestaoobra/desktop/01-dashboard.png" data-alt="Dashboard do GestãoObra com investimento total, custos por categoria e gastos mensais">
+                <img src="img/gestaoobra/desktop/01-dashboard.png" alt="Dashboard do GestãoObra com investimento total, custos por categoria e gastos mensais" width="1440" height="900" loading="lazy">
+              </button>
+            </figure>
+            <div class="phone phone-mini"><div class="shot">
+              <img src="img/gestaoobra/celular-dashboard-web.png" alt="Mesmo dashboard na versão para celular" width="585" height="1266" loading="lazy">
+            </div></div>
+          </div>
+          <p class="media-caption">Dashboard no computador e no celular, com dados de demonstração</p>
+          <ul class="thumbs thumbs-wide" aria-label="Mais telas do GestãoObra">
+            <li><button type="button" data-full="img/gestaoobra/desktop/02-lancamentos.png" data-alt="Lançamentos com filtros por tipo, categoria e período"><img src="img/gestaoobra/desktop/02-lancamentos.png" alt="" width="1440" height="900" loading="lazy"><span>Lançamentos</span></button></li>
+            <li><button type="button" data-full="img/gestaoobra/desktop/03-profissionais.png" data-alt="Cadastro de profissionais com total recebido por cada um"><img src="img/gestaoobra/desktop/03-profissionais.png" alt="" width="1440" height="900" loading="lazy"><span>Profissionais</span></button></li>
+            <li><button type="button" data-full="img/gestaoobra/desktop/05-reembolsos.png" data-alt="Reembolsos pendentes com chave PIX e arquivamento"><img src="img/gestaoobra/desktop/05-reembolsos.png" alt="" width="1440" height="900" loading="lazy"><span>Reembolsos</span></button></li>
+            <li><button type="button" data-full="img/gestaoobra/desktop/06-relatorios.png" data-alt="Relatórios com orçamento consumido e exportação em PDF, Excel e WhatsApp"><img src="img/gestaoobra/desktop/06-relatorios.png" alt="" width="1440" height="900" loading="lazy"><span>Relatórios</span></button></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- PROJECT: Esquadrias -->
+      <article class="project" id="esquadrias">
+        <div>
+          <ul class="project-tags">
+            <li class="tag role-tag">Product Owner hands-on</li>
+            <li class="tag">Indústria</li>
+            <li class="tag">Processos</li>
+          </ul>
+          <h3>Gestão de Projetos de Esquadrias</h3>
+          <p class="project-meta">Nunes Construções e Esquadrias</p>
+          <p class="project-summary">Sistema que acompanha cada obra de esquadrias de alumínio do orçamento à entrega, passando por medição, corte, montagem e instalação.</p>
+          <dl class="case">
+            <div><dt>Problema</dt><dd>Comercial, produção e instalação trabalhavam com informações separadas, sem visão do andamento de cada pedido.</dd></div>
+            <div><dt>O que eu fiz</dt><dd>
+              <ul>
+                <li>Mapeei o fluxo do pedido de ponta a ponta com cada área e o transformei em uma esteira de 9 etapas</li>
+                <li>Defini o painel da semana: obras com prazo em risco, pontos de atenção, agenda de instalações e capacidade da fábrica</li>
+                <li>Especifiquei a ficha da obra com medidas de cada vão, lista de materiais e regra financeira: instalação só liberada com a 2ª parcela paga</li>
+                <li>Priorizei o plano de corte otimizado das barras de perfil e o checklist de qualidade antes da instalação</li>
+                <li>Levei o processo para o campo com o app do instalador, item a item</li>
+              </ul>
+            </dd></div>
+            <div><dt>Resultado</dt><dd>100% dos projetos de esquadrias controlados no sistema, com cada pedido visível do orçamento à instalação.</dd></div>
+          </dl>
+        </div>
+        <div class="project-media">
+          <div class="device-combo">
+            <figure class="frame">
+              <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>perfil-gestao-de-esquadrias</span></div>
+              <button type="button" class="frame-zoom" data-full="img/esquadrias/01-painel-de-obras.jpg" data-alt="Painel de obras com esteira do orçamento à entrega, pontos de atenção, agenda de instalações e capacidade da fábrica">
+                <img src="img/esquadrias/01-painel-de-obras.jpg" alt="Painel de obras com esteira do orçamento à entrega, pontos de atenção, agenda de instalações e capacidade da fábrica" width="1440" height="1112" loading="lazy">
+              </button>
+            </figure>
+            <div class="phone phone-mini"><div class="shot">
+              <img src="img/esquadrias/04-app-instalador.jpg" alt="App da equipe de instalação com os itens da obra para marcar como instalados" width="390" height="844" loading="lazy">
+            </div></div>
+          </div>
+          <p class="media-caption">Painel da semana no computador e app do instalador no celular, com dados de demonstração</p>
+          <ul class="thumbs thumbs-wide" aria-label="Mais telas do sistema de esquadrias">
+            <li><button type="button" data-full="img/esquadrias/02-detalhe-da-obra.jpg" data-alt="Ficha da obra com etapas, esquadrias e medidas, lista de materiais, financeiro e histórico"><img src="img/esquadrias/02-detalhe-da-obra.jpg" alt="" width="1440" height="1256" loading="lazy"><span>Ficha da obra</span></button></li>
+            <li><button type="button" data-full="img/esquadrias/03-producao-plano-de-corte.jpg" data-alt="Produção com fila de ordens, plano de corte otimizado e checklist de qualidade"><img src="img/esquadrias/03-producao-plano-de-corte.jpg" alt="" width="1440" height="1109" loading="lazy"><span>Produção e corte</span></button></li>
+            <li><button type="button" data-full="img/esquadrias/04-app-instalador.jpg" data-alt="App da equipe de instalação"><img src="img/esquadrias/04-app-instalador.jpg" alt="" width="390" height="844" loading="lazy"><span>App do instalador</span></button></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- PROJECT: ROIT implantações -->
+      <article class="project flip" id="implantacoes-roit">
+        <div>
+          <ul class="project-tags">
+            <li class="tag role-tag gp">Gerente de Projetos hands-on</li>
+            <li class="tag">Automação fiscal</li>
+            <li class="tag">ERPs de grande porte</li>
+          </ul>
+          <h3>Automação fiscal e financeira na ROIT</h3>
+          <p class="project-meta">ROIT, nov. 2024 até hoje</p>
+          <p class="project-summary">Implantações da esteira Invoice-to-Pay: recebimento de NF-e, NFS-e, CT-e e invoices até o contas a pagar, integrada ao ERP do cliente.</p>
+          <dl class="case">
+            <div><dt>Escopo</dt><dd>De ponta a ponta: levantamento de requisitos, AS IS → TO BE em BPMN, BBP, regras de negócio, homologação, go-live e pós-implantação.</dd></div>
+            <div><dt>O que eu fiz</dt><dd>
+              <ul>
+                <li>Gestão simultânea de vários clientes: cronograma, riscos e dependências</li>
+                <li>Ponte entre clientes, negócio, Produto e Desenvolvimento</li>
+                <li>Projetos personalizados para cada cliente: levantamento, especificação e orçamento das customizações</li>
+                <li>Atuação no produto Invoice-to-Pay da ROIT, propondo e refinando melhorias com o time de Produto a partir das necessidades dos clientes</li>
+                <li>Automações com n8n e JavaScript; validações em APIs REST, MongoDB e Firebase</li>
+              </ul>
+            </dd></div>
+            <div><dt>Resultado</dt><dd>Automação de até 100% do processo em determinados cenários, com menos esforço manual e mais rastreabilidade e conformidade fiscal.</dd></div>
+          </dl>
+        </div>
+        <div class="project-media">
+          <figure class="frame">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>invoice-to-pay</span></div>
+            <ol class="flow">
+              <li><b>1</b><span><strong>Entrada de documentos</strong>NF-e, NFS-e, CT-e e invoices</span></li>
+              <li><b>2</b><span><strong>Validação fiscal</strong>Regras de negócio e conformidade</span></li>
+              <li><b>3</b><span><strong>Integração com o ERP</strong>APIs REST e workflows no n8n</span></li>
+              <li><b>4</b><span><strong>Contas a pagar</strong>Lançamento automático e rastreável</span></li>
+            </ol>
+            <figcaption>Esteira Invoice-to-Pay que eu implanto nos clientes</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- PROJECT: ACSN implantação varejo -->
+      <article class="project" id="implantacao-varejo">
+        <div>
+          <ul class="project-tags">
+            <li class="tag role-tag gp">Implantador</li>
+            <li class="tag">ERP</li>
+            <li class="tag">Varejo e e-commerce</li>
+          </ul>
+          <h3>Implantação de ERP no varejo</h3>
+          <p class="project-meta">ACSN Desenvolvimento de Software, nov. 2020 a mai. 2024</p>
+          <p class="project-summary">Implantação de ERP (Connect Store), loja virtual e PDV para uma carteira ampla de clientes do varejo.</p>
+          <dl class="case">
+            <div><dt>Problema</dt><dd>Clientes novos chegavam ao sistema sem preparo e geravam muitos chamados de suporte nas primeiras semanas.</dd></div>
+            <div><dt>O que eu fiz</dt><dd>
+              <ul>
+                <li>Levantamento de requisitos e mapeamento dos processos de cada loja</li>
+                <li>Onboarding estruturado com treinamento e documentação</li>
+                <li>Integração de equipamentos fiscais: SAT, PinPad, impressoras e leitores</li>
+                <li>Migração de dados com SQL e apoio em SPED Fiscal e Contribuições</li>
+              </ul>
+            </dd></div>
+            <div><dt>Resultado</dt><dd>Queda significativa nas solicitações de suporte depois da implantação.</dd></div>
+          </dl>
+        </div>
+        <div class="project-media">
+          <figure class="frame">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>implantacao-erp</span></div>
+            <ol class="flow">
+              <li><b>1</b><span><strong>Levantamento</strong>Reuniões com o cliente e documentação</span></li>
+              <li><b>2</b><span><strong>Parametrização</strong>ERP, loja virtual e regras fiscais</span></li>
+              <li><b>3</b><span><strong>Equipamentos e dados</strong>SAT, PinPad e migração via SQL</span></li>
+              <li><b>4</b><span><strong>Onboarding</strong>Treinamento e acompanhamento pós go-live</span></li>
+            </ol>
+            <figcaption>Roteiro de implantação que eu seguia em cada cliente</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- PROJECT: ACSN suporte técnico -->
+      <article class="project flip" id="suporte-tecnico">
+        <div>
+          <ul class="project-tags">
+            <li class="tag role-tag gp">Suporte e liderança</li>
+            <li class="tag">SLA</li>
+            <li class="tag">Atendimento B2B</li>
+          </ul>
+          <h3>Suporte técnico ao varejo</h3>
+          <p class="project-meta">ACSN Desenvolvimento de Software, jan. 2016 a nov. 2024</p>
+          <p class="project-summary">Do primeiro atendimento como analista júnior à supervisão da equipe de suporte de ERP, PDV e e-commerce para clientes e revendas.</p>
+          <dl class="case">
+            <div><dt>Problema</dt><dd>Lojas que param de vender quando o sistema ou um equipamento fiscal falha. O suporte precisava ser rápido, padronizado e não depender de uma pessoa só.</dd></div>
+            <div><dt>O que eu fiz</dt><dd>
+              <ul>
+                <li>Atendimento técnico de ERP, PDV e equipamentos fiscais, virando referência para clientes e parceiros</li>
+                <li>Suporte especializado em SPED Fiscal e Contribuições e consultas SQL para investigar problemas</li>
+                <li>Suporte emergencial 24h para clientes estratégicos</li>
+                <li>Como supervisor: gestão de chamados por SLA, atendimentos imediatos e agendados e relatórios mensais de performance</li>
+                <li>Manuais e guias de procedimento para padronizar o atendimento</li>
+                <li>Capacitação técnica de analistas e revendas</li>
+              </ul>
+            </dd></div>
+            <div><dt>Resultado</dt><dd>Chamados resolvidos dentro dos prazos acordados, alta satisfação dos clientes e uma equipe capacitada e padronizada.</dd></div>
+          </dl>
+        </div>
+        <div class="project-media">
+          <figure class="frame">
+            <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>suporte-tecnico</span></div>
+            <ol class="flow">
+              <li><b>1</b><span><strong>Entrada do chamado</strong>Atendimento imediato ou agendado</span></li>
+              <li><b>2</b><span><strong>Diagnóstico</strong>Sistema, equipamento fiscal ou dados (SQL)</span></li>
+              <li><b>3</b><span><strong>Resolução no SLA</strong>Acompanhamento até o cliente voltar a operar</span></li>
+              <li><b>4</b><span><strong>Melhoria contínua</strong>Manual atualizado, time treinado e relatório mensal</span></li>
+            </ol>
+            <figcaption>Fluxo de atendimento que eu padronizei na equipe</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== CASES ===================== -->
+  <section class="section cases" id="cases" aria-labelledby="cases-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="cases-title">Cases de produto</h2>
+        <p>Desafios de produto resolvidos de ponta a ponta: diagnóstico, priorização, solução, regras de negócio e plano de execução.</p>
+      </div>
+
+      <article class="case-card">
+        <div class="case-card-body">
+          <ul class="project-tags">
+            <li class="tag role-tag">Gestão de Produto</li>
+            <li class="tag">E-commerce</li>
+            <li class="tag">Checkout e conversão</li>
+          </ul>
+          <h3>5.000 carrinhos abandonados por mês. O que eu faria?</h3>
+          <p class="case-card-summary">Desafio de entrevista técnica para Produto: uma loja online perdia 80% dos carrinhos. Descobri onde e por que as pessoas desistiam e montei um plano de 90 dias para recuperar de 250 a 375 pedidos por mês, sem gastar mais com anúncios.</p>
+          <ul class="case-card-list">
+            <li>Conferência do dado e leitura do funil por etapa e dispositivo</li>
+            <li>Motivos de abandono a partir de pesquisa, pagamento e atendimento</li>
+            <li>Priorização com RICE e hipóteses testáveis</li>
+            <li>Protótipos do checkout e régua de recuperação com regras de negócio</li>
+            <li>Histórias de usuário, métricas com grupo de controle e plano de 90 dias</li>
+          </ul>
+          <a class="btn btn-primary" href="cases/carrinhos-abandonados.html" target="_blank" rel="noopener">Abrir o case completo</a>
+        </div>
+        <figure class="case-funnel" aria-label="Funil do desafio: de 6.250 carrinhos criados, 1.250 viram pedido">
+          <figcaption>Funil do desafio, média mensal</figcaption>
+          <ol>
+            <li style="--w:100%"><span>Carrinho criado</span><b>6.250</b></li>
+            <li style="--w:70%"><span>Iniciou o checkout</span><b>4.375</b></li>
+            <li style="--w:55.2%"><span>Viu o frete</span><b>3.450</b></li>
+            <li class="drop" style="--w:30.4%"><span>Escolheu o frete</span><b>1.900</b></li>
+            <li style="--w:24%"><span>Chegou ao pagamento</span><b>1.500</b></li>
+            <li style="--w:20%"><span>Pedido concluído</span><b>1.250</b></li>
+          </ol>
+          <p class="case-funnel-note"><i aria-hidden="true"></i>A maior queda: 45% saíam ao ver o frete</p>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== ROLES ===================== -->
+  <section class="section roles" aria-labelledby="roles-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="roles-title">Onde eu agrego</h2>
+        <p>Quatro papéis que já exerci na prática, não só no título.</p>
+      </div>
+      <div class="role-table">
+        <article class="role">
+          <h3>Product Owner</h3>
+          <p>Discovery com quem vive o problema, histórias de usuário com critérios de aceite e backlog priorizado. Trabalho lado a lado com os desenvolvedores.</p>
+        </article>
+        <article class="role">
+          <h3>Product Manager</h3>
+          <p>Defino visão e escopo do MVP, decido o que entra e o que fica de fora e acompanho a evolução do produto depois do lançamento.</p>
+        </article>
+        <article class="role">
+          <h3>Gerente de Projetos</h3>
+          <p>Conduzo vários projetos e clientes ao mesmo tempo: cronograma, riscos, dependências, stakeholders e entrega até o go-live e pós-implantação.</p>
+        </article>
+        <article class="role">
+          <h3>Consultor Funcional</h3>
+          <p>Mapeio o AS IS e desenho o TO BE em BPMN, escrevo o BBP e traduzo regra de negócio em parametrização de ERP e integrações.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESS ===================== -->
+  <section class="section process" id="como-trabalho" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="process-title">Como eu trabalho</h2>
+        <p>O mesmo caminho para um MVP novo ou para uma implantação em cliente grande.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><h3>Entender</h3><p>Converso com quem vive o problema e mapeio o processo como ele é hoje.</p></li>
+        <li class="step"><h3>Definir</h3><p>Transformo o que ouvi em requisitos, regras de negócio e critérios de aceite.</p></li>
+        <li class="step"><h3>Priorizar</h3><p>Corto o escopo até o mínimo que já resolve. O resto vira roadmap.</p></li>
+        <li class="step"><h3>Entregar</h3><p>Acompanho o time no dia a dia, testo junto e removo bloqueios.</p></li>
+        <li class="step"><h3>Sustentar</h3><p>Acompanho o go-live, meço o resultado e ajusto a próxima rodada.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="skills-title">Competências</h2>
+      </div>
+      <div class="skills-grid">
+        <div>
+          <h3>Produto</h3>
+          <ul>
+            <li>Discovery e definição de MVP</li>
+            <li>Histórias de usuário e critérios de aceite</li>
+            <li>Refinamento e priorização de backlog</li>
+            <li>Scrum, Kanban e Scrumban</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Projetos e processos</h3>
+          <ul>
+            <li>Implantação de ERP e automação fiscal</li>
+            <li>BPMN, AS IS / TO BE e BBP</li>
+            <li>Cronograma, riscos e stakeholders</li>
+            <li>Indicadores e melhoria contínua</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Ferramentas e técnico</h3>
+          <ul>
+            <li>Jira, Trello e Lucidchart</li>
+            <li>n8n, JavaScript e APIs REST</li>
+            <li>SQL, MongoDB, Firebase e Power BI</li>
+            <li>ChatGPT, Claude Code, Gemini e Antigravity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="section edu" id="formacao" aria-labelledby="edu-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="edu-title">Formação e certificados</h2>
+      </div>
+      <div class="edu-grid">
+        <div>
+          <h3>Formação</h3>
+          <ul class="entries">
+            <li><strong>Análise e Desenvolvimento de Sistemas</strong><span class="org">Centro Universitário FAM, CST</span><span class="when">2024 – 2026</span></li>
+            <li><strong>Product Management</strong><span class="org">PM3</span><span class="when">2025</span></li>
+            <li><strong>Administração de Empresas</strong><span class="org">Ceunsp, bacharelado</span><span class="when">2016 – 2019</span></li>
+            <li><strong>Administração de Empresas</strong><span class="org">AEDHA, tecnólogo</span><span class="when">2012 – 2014</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Certificados</h3>
+          <ul class="entries">
+            <li><strong>Curso de Product Management</strong><span class="org">PM3</span><span class="when">2025</span></li>
+            <li><strong>Dominando o Jira</strong><span class="org">Udemy</span><span class="when">2024</span></li>
+            <li><strong>Visualização de Dados e Design de Dashboards</strong><span class="org">PM3</span><span class="when">2024</span></li>
+            <li><strong>Product Management</strong><span class="org">Udemy</span><span class="when">2024</span></li>
+            <li><strong>BPMN, Modelagem de Processos</strong><span class="org">Udemy</span><span class="when">2024</span></li>
+            <li><strong>Análise de Requisitos com Histórias de Usuários</strong><span class="org">Udemy</span><span class="when">2024</span></li>
+            <li><strong>Metodologias Ágeis: Scrum, Kanban e Scrumban</strong><span class="org">Udemy</span><span class="when">2024</span></li>
+            <li><strong>Privacidade e Proteção de Dados (LGPD)</strong><span class="org">Senai São Paulo</span><span class="when">2022</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact" id="contato" aria-labelledby="contact-title">
+    <div class="wrap contact-box">
+      <div>
+        <h2 id="contact-title">Vamos conversar sobre a sua vaga?</h2>
+        <p class="contact-lead">Estou aberto a vagas híbridas e remotas.</p>
+      </div>
+      <ul class="contact-links">
+        <li><a href="https://www.linkedin.com/in/igor-rossi-nunes/" target="_blank" rel="noopener">LinkedIn <small>igor-rossi-nunes</small></a></li>
+        <li><a href="mailto:igor.rossi10@gmail.com">E-mail <small>igor.rossi10@gmail.com</small></a></li>      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">© <span id="year">2026</span> Igor Rossi Nunes</div>
+</footer>
+
+<dialog class="viewer" id="viewer" aria-label="Tela ampliada">
+  <button class="viewer-close" type="button">Fechar</button>
+  <img src="" alt="">
+</dialog>
+
+<script>
+  const viewer = document.getElementById('viewer');
+  const viewerImg = viewer.querySelector('img');
+  document.querySelectorAll('[data-full]').forEach(btn => btn.addEventListener('click', () => {
+    viewerImg.src = btn.dataset.full;
+    viewerImg.alt = btn.dataset.alt;
+    viewer.showModal();
+  }));
+  viewer.querySelector('.viewer-close').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  });
+  menu.addEventListener('click', e => {
+    if (e.target.closest('a')) { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }
+  });
+</script>
+</body>
+</html>
